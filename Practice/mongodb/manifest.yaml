@@ -22,7 +22,7 @@ kind: Deployment
 metadata:
   name: mongodb
   namespace: roboshop
-  lables:
+  labels:
     project: roboshop
     component: mongodb
     tire: database
