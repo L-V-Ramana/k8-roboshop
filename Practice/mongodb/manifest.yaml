@@ -8,7 +8,7 @@ metadata:
     environment: dev
     tire: database
 spec:
-  selctor:
+  selector:
     project: roboshop
     component: mongodb
     tire: database
