@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata: 
   name: cart
   namespace: roboshop
-  labes:
+  labels:
     project: roboshop
     component: cart
     environment: dev
@@ -18,7 +18,7 @@ kind: Service
 metadata:
   name: cart
   namespace: roboshop
-  lables:
+  labels:
     project: roboshop
     component: cart
     environment: dev
@@ -38,7 +38,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: cart
-  namespeace: roboshop
+  namespace: roboshop
   labels:
     project: roboshop
     component: cart
