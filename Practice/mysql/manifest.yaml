@@ -44,7 +44,7 @@ metadata:
     environment: dev
     tire: database
 spec:
-  replica: 1
+  replicas: 1
   selector:
     matchLabels:
       project: roboshop
