@@ -20,7 +20,7 @@ spec:
     targetPort: 6379
 ---
 apiVersion: apps/v1
-kind: Deploymnet
+kind: Deployment
 metadata: 
   name: redis
   namespace: roboshop
