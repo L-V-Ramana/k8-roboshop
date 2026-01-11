@@ -68,5 +68,5 @@ spec:
       - name: payment
         image: ramslella/payment:v2
         envFrom:
-        - payment:
+        - configMapRef:
            name: payment
