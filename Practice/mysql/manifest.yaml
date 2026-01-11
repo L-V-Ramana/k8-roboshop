@@ -10,7 +10,7 @@ metadata:
     tire: database
 data:
   type: Opaque
-  MYSQL_ROOT_PASSWORD: Um9ib1Nob3BAMQo=
+  MYSQL_ROOT_PASSWORD: "Um9ib1Nob3BAMQo="
 ---
 apiVersion: v1
 kind: Service
@@ -31,7 +31,7 @@ spec:
   ports:
   - protocol: TCP
     port: 3306
-    targrtPort: 3306
+    targetPort: 3306
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -66,4 +66,4 @@ spec:
         image: ramslella/mysql:v2
         envFrom:
         - secretRef:
-          name: mysql
+            name: mysql
