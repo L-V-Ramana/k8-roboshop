@@ -125,7 +125,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: ramslella/frontend:v2
+        image: joindevops/frontend:v1
         volumeMounts: 
             - name: nginx-conf
               mountPath: /etc/nginx/nginx.conf
