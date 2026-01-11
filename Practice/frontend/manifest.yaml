@@ -126,8 +126,6 @@ spec:
       containers:
       - name: frontend
         image: ramslella/frontend:v2
-        ports:
-        - containerPort: 80
         volumeMounts: 
             - name: nginx-conf
               mountPath: /etc/nginx/nginx.conf
