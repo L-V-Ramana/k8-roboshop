@@ -81,15 +81,15 @@ metadata:
   labels:
     project: roboshop
     environment: dev
-    component: rabbitmq
-    tire: database
+    component: frontend
+    tire: web
 spec:
   type: LoadBalancer
   selector:
     project: roboshop
     environment: dev
-    component: rabbitmq
-    tire: database
+    component: frontend
+    tire: web
   ports:
   - protocol: TCP
     port: 80
@@ -120,15 +120,15 @@ spec:
       labels: 
         project: roboshop
         environment: dev
-        component: rabbitmq
-        tire: database
+        component: frontend
+        tire: web
     spec:
       containers:
       - name: frontend
         image: ramslella/frontend:v2
         ports:
         - containerPort: 80
-        volumeMounts:
+        volumeMounts: 
             - name: nginx-conf
               mountPath: /etc/nginx/nginx.conf
               subPath: nginx.conf
