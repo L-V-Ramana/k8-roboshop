@@ -4,11 +4,12 @@ metadata:
   name: nginx-conf
   namespace: roboshop
   labels:
-    component: frontend
     project: roboshop
-    tier: web
-data:
-  nginx.conf: |
+    environment: dev
+    component: frontend
+    tire: web
+data: 
+  nginx.cong: |
     user nginx;
     worker_processes auto;
     error_log /var/log/nginx/error.log notice;
@@ -72,64 +73,68 @@ data:
         }
     }
 ---
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: frontend
-  namespace: roboshop
-  # deployment labels
-  labels:
-    component: frontend
-    project: roboshop
-    tier: web
-spec:
-  replicas: 1
-  # These are the labels replica set use to create pod replicas, this should match pod labels
-  selector:
-    matchLabels:
-      component: frontend
-      project: roboshop
-      tier: web
-  # This is pod definition
-  template:
-    metadata:
-      labels:
-        component: frontend
-        project: roboshop
-        tier: web
-    spec:
-      containers:
-      - name: frontend
-        image: joindevops/frontend:v1
-        volumeMounts:
-        - name: nginx-conf
-          mountPath: /etc/nginx/nginx.conf
-          subPath: nginx.conf
-          readOnly: true
-      volumes:
-        - name: nginx-conf
-          configMap:
-            name: nginx-conf
-            items:
-              - key: nginx.conf
-                path: nginx.conf
----
 apiVersion: v1
 kind: Service
 metadata:
   name: frontend
   namespace: roboshop
   labels:
-    component: frontend
     project: roboshop
-    tier: web
+    environment: dev
+    component: frontend
+    tire: web
 spec:
   type: LoadBalancer
   selector:
-    component: frontend
     project: roboshop
-    tier: web
+    environment: dev
+    component: frontend
+    tire: web
   ports:
   - protocol: TCP
-    port: 80 # service port
-    targetPort: 8080 # container port
+    port: 80
+    targetPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  namespace: roboshop
+  labels: 
+    project: roboshop
+    environment: dev
+    component: fronend
+    tire: web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      project: roboshop
+      environment: dev
+      component: frontend
+      tire: web
+  template:
+    metadata:
+      name: frontend
+      namespace: roboshop
+      labels: 
+        project: roboshop
+        environment: dev
+        component: frontend
+        tire: web
+    spec:
+      containers:
+      - name: frontend
+        image: joindevops/frontend:v2
+        volumeMounts: 
+            - name: nginx-conf
+              mountPath: /etc/nginx/nginx.conf
+              subPath: nginx.conf
+              readOnly: true
+      volumes:
+      - name: nginx-conf
+        configMap:
+          name: nginx-conf
+          items:
+            - key: nginx.conf
+              path: nginx.conf
