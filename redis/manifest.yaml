@@ -26,8 +26,8 @@ spec:
     spec:
     containers:
     - name: redis
-      image: redis:7.0
-    .0
+      image: resis:7.0
+    
 --- 
 
 apiVersion: v1
