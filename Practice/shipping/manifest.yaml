@@ -16,7 +16,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: shipping
-  namsespace: roboshop
+  namespace: roboshop
   labels:
     project: roboshop
     environment: dev
@@ -66,4 +66,4 @@ spec:
         image: ramslella/shipping:v2
         envFrom:
         - configMapRef:
-          name: shipping
+            name: shipping
