@@ -65,7 +65,7 @@ spec:
       containers:
       - name: catalogue
         image: ramslella/catalogue:v2
-      envFrom:
+        envFrom:
         - configMapRef:
-            name: catalogue
+          name: catalogue
 
