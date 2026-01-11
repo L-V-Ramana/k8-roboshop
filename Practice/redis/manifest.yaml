@@ -25,7 +25,7 @@ metadata:
   name: redis
   namespace: roboshop
   labels:
-    proect: roboshop
+    project: roboshop
     component: redis
     environment: dev
     tire: database
@@ -33,7 +33,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      proect: roboshop
+      project: roboshop
       component: redis
       environment: dev
       tire: database
@@ -42,7 +42,7 @@ spec:
       name: redis
       namespace: roboshop
       labels:
-        proect: roboshop
+        project: roboshop
         component: redis
         environment: dev
         tire: database
