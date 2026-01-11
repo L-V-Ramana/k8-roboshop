@@ -53,7 +53,7 @@ spec:
       environment: dev
       tire: backend
   template:
-    namespace:
+    metadata:
       name: cart
       namespace: roboshop
       labels:
