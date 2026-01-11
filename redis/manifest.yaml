@@ -26,7 +26,7 @@ spec:
     spec:
     containers:
     - name: redis
-      image: ramslella/redis
+      image: redis:7
     
 --- 
 
