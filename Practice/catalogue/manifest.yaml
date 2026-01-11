@@ -23,7 +23,7 @@ metadata:
     tire: backend
     environment: dev
 spec:
-selector:
+selectors:
    project: roboshop
    component: catalogue
    tire: backend
