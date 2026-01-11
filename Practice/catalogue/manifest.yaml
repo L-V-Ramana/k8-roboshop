@@ -23,7 +23,7 @@ metadata:
     tire: backend
     environment: dev
 spec:
-selectors:
+  selectors:
    project: roboshop
    component: catalogue
    tire: backend
@@ -67,5 +67,5 @@ spec:
         image: ramslella/catalogue:v2
         envFrom:
         - configMapRef:
-          name: catalogue
+        name: catalogue
 
