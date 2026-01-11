@@ -30,7 +30,7 @@ metadata:
     component: payment
     tire: backend
 spec:
-  replica: 1
+  replicas: 1
   selector:
     matchLabels:
       project: roboshop
