@@ -9,7 +9,7 @@ metadata:
     component: frontend
     tire: web
 data: 
-  nginx.cong: |
+  nginx.conf: |
     user nginx;
     worker_processes auto;
     error_log /var/log/nginx/error.log notice;
@@ -121,11 +121,11 @@ spec:
         project: roboshop
         environment: dev
         component: frontend
-        tire: web
+        tire: webx
     spec:
       containers:
       - name: frontend
-        image: joindevops/frontend:v2
+        image: ramslella/frontend:v2
         volumeMounts: 
             - name: nginx-conf
               mountPath: /etc/nginx/nginx.conf
