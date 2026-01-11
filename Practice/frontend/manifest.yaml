@@ -106,7 +106,7 @@ metadata:
     component: fronend
     tire: web
 spec:
-  replica: 1
+  replicas: 1
   selector:
     matchLabels:
       project: roboshop
