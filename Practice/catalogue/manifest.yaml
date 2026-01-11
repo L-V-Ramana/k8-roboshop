@@ -67,5 +67,5 @@ spec:
         image: ramslella/catalogue:v2
         envFrom:
         - configMapRef:
-        name: catalogue
+          name: catalogue
 
