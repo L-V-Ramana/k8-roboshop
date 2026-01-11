@@ -38,7 +38,7 @@ kind: Deployment
 metadata:
   name: mysql
   namespace: roboshop
-  lables:
+  labels:
     project: roboshop
     component: mysql
     environment: dev
@@ -55,7 +55,7 @@ spec:
     metadata:
       name: mysql
       namespace: roboshop
-      lables:
+      labels:
         project: roboshop
         component: mysql
         environment: dev
