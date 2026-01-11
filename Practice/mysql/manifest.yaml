@@ -53,8 +53,8 @@ spec:
       tire: database
   template:
     metadata:
-      name: mysql
-      namespace: roboshop
+      # name: mysql
+      # namespace: roboshop
       labels:
         project: roboshop
         component: mysql
